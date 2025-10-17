@@ -28,7 +28,8 @@ class SimpleAgent:
             system_prompt (str): Instructions that define agent behavior
         """
         # Load environment variables from .env file
-        load_dotenv()
+        # Use override=True to prioritize .env file over system environment variables
+        load_dotenv(override=True)
 
         # Set up the model
         self.model = model

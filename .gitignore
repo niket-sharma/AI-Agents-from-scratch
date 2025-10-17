@@ -37,6 +37,7 @@ venv.bak/
 # IDE
 .vscode/
 .idea/
+.claude/
 *.swp
 *.swo
 *~
@@ -99,3 +100,19 @@ saved_conversations/
 outputs/
 data/cache/
 *.pkl
+
+# Test and diagnostic files
+test_*.py
+check_*.py
+diagnose_*.py
+demo_*.py
+
+# Pipenv files (if using requirements.txt)
+Pipfile
+Pipfile.lock
+
+# API keys and credentials
+*api_key*.py
+*credentials*.json
+*secrets*.py
+config.local.py

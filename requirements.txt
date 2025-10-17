@@ -1,60 +1,60 @@
 # Core LLM APIs
-openai>=1.12.0
-anthropic>=0.18.0
+openai
+anthropic
 
 # Environment management
-python-dotenv>=1.0.0
+python-dotenv
 
 # Token counting
-tiktoken>=0.6.0
+tiktoken
 
 # Data validation and parsing
-pydantic>=2.6.0
+pydantic
 
 # HTTP requests
-requests>=2.31.0
+requests
 
 # Vector databases (for advanced tutorials)
-chromadb>=0.4.22
+chromadb
 
 # Data processing
-numpy>=1.24.0
+numpy
 
 # Interactive notebooks
-jupyter>=1.0.0
-ipykernel>=6.29.0
+jupyter
+ipykernel
 
 # Testing
-pytest>=8.0.0
-pytest-asyncio>=0.23.0
-pytest-cov>=4.1.0
+pytest
+pytest-asyncio
+pytest-cov
 
 # Code quality
-black>=24.0.0
-flake8>=7.0.0
-mypy>=1.8.0
+black
+flake8
+mypy
 
 # Retry logic
-tenacity>=8.2.0
+tenacity
 
 # JSON schema validation
-jsonschema>=4.21.0
+jsonschema
 
 # Date/time utilities
-python-dateutil>=2.8.2
+python-dateutil
 
 # Logging
-colorlog>=6.8.0
+colorlog
 
 # CLI utilities
-rich>=13.7.0
-click>=8.1.7
+rich
+click
 
 # Optional: Web UI frameworks
-gradio>=4.19.0
-streamlit>=1.31.0
+gradio
+streamlit
 
 # Optional: Additional LLM frameworks
-langchain>=0.1.9
-langchain-community>=0.0.24
-langchain-openai>=0.0.7
+langchain
+langchain-community
+langchain-openai
