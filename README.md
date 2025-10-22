@@ -69,7 +69,17 @@ Give your agent the ability to remember past conversations
 - Add memory summarization
 - **Time**: 45 minutes
 
-#### [Tutorial 03: Tool Integration](tutorials/03-tools/)
+#### [Tutorial 03: MCP Servers](tutorials/03-mcp-servers/)
+Build Model Context Protocol (MCP) servers from scratch
+- Understand MCP architecture (servers, clients, tools, resources)
+- Create basic MCP server with calculator tools
+- Build advanced tools (weather service with multiple endpoints)
+- Expose resources (file system access)
+- Test servers with custom MCP client
+- Connect to Claude Desktop
+- **Time**: 1-2 hours
+
+#### [Tutorial 04: Tool Integration](tutorials/04-tools/)
 Enable your agent to use external tools and APIs
 - Define tool schemas
 - Implement function calling
@@ -77,14 +87,14 @@ Enable your agent to use external tools and APIs
 - Create custom tools
 - **Time**: 1 hour
 
-#### [Tutorial 04: Planning and Reasoning](tutorials/04-planning/)
+#### [Tutorial 05: Planning and Reasoning](tutorials/05-planning/)
 Build agents that can think through complex problems
 - Implement ReAct pattern
 - Add multi-step planning
 - Create task decomposition
 - **Time**: 1 hour
 
-#### [Tutorial 05: Advanced Features](tutorials/05-advanced/)
+#### [Tutorial 06: Advanced Features](tutorials/06-advanced/)
 Master advanced agent capabilities
 - Vector database integration
 - Retrieval-Augmented Generation (RAG)
@@ -108,9 +118,10 @@ AI-Agents-from-scratch/
 ├── tutorials/            # Step-by-step tutorials
 │   ├── 01-basics/
 │   ├── 02-memory/
-│   ├── 03-tools/
-│   ├── 04-planning/
-│   └── 05-advanced/
+│   ├── 03-mcp-servers/  # NEW: MCP server tutorials
+│   ├── 04-tools/
+│   ├── 05-planning/
+│   └── 06-advanced/
 ├── src/                  # Reusable agent framework
 │   ├── agent/           # Core agent classes
 │   ├── memory/          # Memory implementations

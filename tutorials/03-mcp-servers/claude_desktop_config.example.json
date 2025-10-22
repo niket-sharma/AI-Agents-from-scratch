@@ -1,0 +1,23 @@
+{
+  "mcpServers": {
+    "calculator": {
+      "command": "python",
+      "args": [
+        "C:/Users/YourName/llmapp/AI-Agents-from-scratch/tutorials/03-mcp-servers/basic/simple_mcp_server.py"
+      ]
+    },
+    "weather": {
+      "command": "python",
+      "args": [
+        "C:/Users/YourName/llmapp/AI-Agents-from-scratch/tutorials/03-mcp-servers/tools/weather_mcp_server.py"
+      ]
+    },
+    "file-explorer": {
+      "command": "python",
+      "args": [
+        "C:/Users/YourName/llmapp/AI-Agents-from-scratch/tutorials/03-mcp-servers/resources/file_explorer_server.py",
+        "C:/Users/YourName/Documents"
+      ]
+    }
+  }
+}
