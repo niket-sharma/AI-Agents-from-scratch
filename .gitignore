@@ -116,3 +116,14 @@ Pipfile.lock
 *credentials*.json
 *secrets*.py
 config.local.py
+
+# MCP Tutorial - Generated files
+tutorials/03-mcp-servers/weather_alerts/
+tutorials/03-mcp-servers/*.json
+!tutorials/03-mcp-servers/claude_desktop_config.example.json
+tutorials/03-mcp-servers/.gitignore_summary.txt
+
+# MCP - User-specific Claude Desktop configs
+claude_desktop_config.json
+**/claude_desktop_config.json
+!**/claude_desktop_config.example.json
