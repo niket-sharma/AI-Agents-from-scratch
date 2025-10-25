@@ -56,51 +56,49 @@ python tutorials/01-basics/simple_agent.py
 ### Tutorials
 
 #### [Tutorial 01: Basic Agent](tutorials/01-basics/)
-Build your first AI agent with a simple conversation loop
+Build your first AI agent with a simple conversation loop.
 - Set up API connections
 - Create a basic agent class
 - Implement prompt-response cycles
 - **Time**: 30 minutes
 
-#### [Tutorial 02: Adding Memory](tutorials/02-memory/)
-Give your agent the ability to remember past conversations
+#### [Tutorial 02: Memory](tutorials/02-memory/)
+Give your agent the ability to remember past conversations.
 - Implement conversation history
 - Create memory buffers
 - Add memory summarization
 - **Time**: 45 minutes
 
-#### [Tutorial 03: MCP Servers](tutorials/03-mcp-servers/)
-Build Model Context Protocol (MCP) servers from scratch
-- Understand MCP architecture (servers, clients, tools, resources)
-- Create basic MCP server with calculator tools
-- Build advanced tools (weather service with multiple endpoints)
-- Expose resources (file system access)
-- Test servers with custom MCP client
-- Connect to Claude Desktop
-- **Time**: 1-2 hours
-
-#### [Tutorial 04: Tool Integration](tutorials/04-tools/)
-Enable your agent to use external tools and APIs
+#### [Tutorial 03A: Tool Integration](tutorials/03-tools/)
+Enable your agent to use external tools and APIs.
 - Define tool schemas
 - Implement function calling
 - Add error handling
 - Create custom tools
-- **Time**: 1 hour
+- **Time**: 45 minutes
 
-#### [Tutorial 05: Planning and Reasoning](tutorials/05-planning/)
-Build agents that can think through complex problems
-- Implement ReAct pattern
-- Add multi-step planning
-- Create task decomposition
-- **Time**: 1 hour
+#### [Tutorial 03B: MCP Servers](tutorials/03-mcp-servers/)
+Build Model Context Protocol (MCP) servers from scratch.
+- Understand MCP architecture (servers, clients, tools, resources)
+- Create calculator and weather servers
+- Expose filesystem resources
+- Test with the included MCP client
+- Connect to Claude Desktop
+- **Time**: 1-2 hours
 
-#### [Tutorial 06: Advanced Features](tutorials/06-advanced/)
-Master advanced agent capabilities
-- Vector database integration
+#### [Tutorial 04: Planning & Reasoning](tutorials/04-planning/)
+Teach agents to plan, reason, and execute multi-step tasks.
+- Implement the ReAct pattern
+- Decompose objectives into subtasks
+- Combine planning with memory and tools
+- **Time**: 60 minutes
+
+#### [Tutorial 05: Advanced Patterns](tutorials/05-advanced/)
+Master advanced capabilities for production-grade agents.
 - Retrieval-Augmented Generation (RAG)
-- Multi-agent systems
-- Streaming responses
-- **Time**: 1.5 hours
+- Multi-agent collaboration and feedback
+- Lightweight evaluation loops
+- **Time**: 75-90 minutes
 
 ### Example Applications
 
@@ -118,13 +116,14 @@ AI-Agents-from-scratch/
 ├── tutorials/            # Step-by-step tutorials
 │   ├── 01-basics/
 │   ├── 02-memory/
-│   ├── 03-mcp-servers/  # NEW: MCP server tutorials
-│   ├── 04-tools/
-│   ├── 05-planning/
-│   └── 06-advanced/
+│   ├── 03-tools/
+│   ├── 03-mcp-servers/
+│   ├── 04-planning/
+│   └── 05-advanced/
 ├── src/                  # Reusable agent framework
 │   ├── agent/           # Core agent classes
 │   ├── memory/          # Memory implementations
+│   ├── planning/        # Planning utilities (ReAct, task decomposition)
 │   ├── tools/           # Tool management
 │   └── utils/           # Helper utilities
 ├── examples/            # Example applications
@@ -144,9 +143,9 @@ AI-Agents-from-scratch/
 
 ## Learning Path
 
-1. **Beginners**: Follow tutorials 01-03 sequentially
-2. **Intermediate**: Skip to tutorial 03 or 04
-3. **Advanced**: Explore tutorial 05 and example applications
+1. **Beginners**: Follow tutorials 01 → 02 → 03A sequentially
+2. **Intermediate**: Add tutorial 03B (MCP) and 04 for planning
+3. **Advanced**: Dive into tutorial 05 and example applications
 4. **Framework Builders**: Study the `src/` directory for reusable components
 
 ## Technologies Used
