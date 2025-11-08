@@ -100,6 +100,13 @@ Master advanced capabilities for production-grade agents.
 - Lightweight evaluation loops
 - **Time**: 75-90 minutes
 
+#### [Tutorial 06: LangGraph Agents](tutorials/06-langgraph/)
+Model chat workflows as state graphs with LangGraph.
+- Understand StateGraph building blocks
+- Add conditional routing and tool execution
+- Stream responses and persist conversation state
+- **Time**: 60-75 minutes
+
 ### Example Applications
 
 Real-world agent implementations you can use as templates:
@@ -201,8 +208,9 @@ See [docs/troubleshooting.md](docs/troubleshooting.md) for more help.
 
 ## Roadmap
 
-- [ ] Tutorial 06: Agent Evaluation and Testing
-- [ ] Tutorial 07: Production Deployment
+- [x] Tutorial 06: LangGraph Agents
+- [ ] Tutorial 07: Agent Evaluation and Testing
+- [ ] Tutorial 08: Production Deployment
 - [ ] Video tutorial series
 - [ ] Interactive web-based tutorials
 - [ ] Support for open-source LLMs (Llama, Mistral)

@@ -49,6 +49,7 @@ Tutorial 05: Advanced Patterns (75-90 min)
     ↓
 BUILD YOUR OWN AGENT!
 ```
+**New addition**: slot **Tutorial 06: LangGraph Agents (60-75 min)** between Tutorial 05 and your personal project to gain graph-based orchestration skills.
 
 ---
 
@@ -311,7 +312,47 @@ python multi_agent_team.py # Try collaborative workflow
 - [ ] Orchestrate multiple agents with different strengths
 - [ ] Apply reviewer feedback to improve a draft
 
-**Next Step**: Build a project or revisit earlier tutorials for mastery
+**Next Step**: Tutorial 06 (LangGraph Agents) or start a custom project.
+
+---
+
+## 📚 Tutorial 06: LangGraph Agents
+
+**Location**: `tutorials/06-langgraph/`
+
+**What You'll Learn**:
+- �o. LangGraph building blocks (state, nodes, edges, reducers)
+- �o. How to embed tool routing and conditional logic
+- �o. Streaming and memory persistence patterns
+- �o. Strategies for extending graphs with new branches
+
+**Time**: 60-75 minutes
+
+**Files**:
+1. **`README.md`** - This learning guide plus step-by-step plan
+2. **`langgraph_agent.py`** - Reference implementation with CLI runner
+
+**How to Start**:
+```bash
+pip install langgraph langchain-openai
+cd tutorials/06-langgraph
+python langgraph_agent.py --no-stream  # classic responses
+python langgraph_agent.py --stream     # token streaming
+```
+
+**Exercises**:
+1. Add a second tool (e.g., file search) and update `_route_after_model`.
+2. Insert a moderation node before `call_model` to filter inputs.
+3. Store checkpoints with `MemorySaver` so chats survive process restarts.
+4. Replace OpenAI with another LangChain-compatible provider.
+
+**Success Criteria**:
+- [ ] Agent can decide when to call tools
+- [ ] You can explain how `add_messages` aggregates state
+- [ ] Streaming mode produces incremental output
+- [ ] You can add or remove nodes confidently
+
+**Next Step**: Build your own agent or refactor earlier tutorials to use LangGraph.
 
 ---
 
@@ -419,13 +460,20 @@ Should print: `Setup OK!`
 - ✅ Run `multi_agent_team.py`
 - ✅ Customize the retrieval store or add a new agent
 
-### Day 7: Build Your Own! (2-4 hours)
-- ✅ Design your own agent
-- ✅ Implement features you learned
-- ✅ Test thoroughly
-- ✅ Share your creation!
+### Day 7: LangGraph Agents (1-2 hours)
+- �o. Read tutorials/06-langgraph/README.md
+- �o. Install langgraph and run langgraph_agent.py
+- �o. Try both streaming and non-streaming modes
+- �o. Add a custom tool or extra branch
+
+### Day 8: Build Your Own! (2-4 hours)
+- �o. Design your own agent
+- �o. Implement features you learned
+- �o. Test thoroughly
+- �o. Share your creation!
 
 ---
+
 
 ## 🎯 Project Ideas by Skill Level
 
@@ -510,6 +558,13 @@ Use this to track your learning:
 - [ ] Study 3 server examples
 - [ ] Build own MCP server
 - [ ] (Optional) Connect to Claude Desktop
+
+### Tutorial 06: LangGraph Agents
+- [ ] Install/upgrade `langgraph`
+- [ ] Read `tutorials/06-langgraph/README.md`
+- [ ] Run `langgraph_agent.py --no-stream`
+- [ ] Run `langgraph_agent.py --stream`
+- [ ] Add or modify at least one node/tool
 
 ---
 
