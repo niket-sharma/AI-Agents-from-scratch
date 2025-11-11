@@ -1,6 +1,21 @@
 # Tutorial 06: LangGraph Agents from Scratch
 
+> **📋 New? Start here:** [INDEX.md](INDEX.md) - Complete navigation guide for this tutorial
+
 LangGraph brings structured state machines to LLM applications. In this tutorial you will move from prompt-response loops to fully traceable agents that branch, call tools, and maintain conversational state automatically.
+
+## 🆕 Enhanced Tutorial: Real-World Application
+
+This tutorial now includes **two implementations**:
+
+1. **`langgraph_agent.py`** - Basic LangGraph agent with calculator tool (original)
+2. **`customer_support_agent.py`** - **NEW!** Production-ready customer support system
+
+The customer support example showcases **why LangGraph excels**:
+- ✅ **Orchestration**: Multi-stage workflow (analyze → route → handle → escalate)
+- ✅ **Persistence**: Ticket state tracked throughout the conversation
+- ✅ **Branching**: Automatic escalation based on priority and keywords
+- ✅ **Real-world**: Practical example everyone can understand
 
 ## Tutorial Map (Plan)
 
@@ -42,8 +57,148 @@ pip install --upgrade "langgraph>=0.2.20" langchain-openai langchain-core
 
 ## Files in This Tutorial
 
-- `tutorials/06-langgraph/langgraph_agent.py` – the reference implementation you can run and edit.
-- `tutorials/06-langgraph/README.md` – this learning guide.
+| File | Purpose | Start Here? |
+|------|---------|-------------|
+| **`QUICKSTART.md`** | 15-minute hands-on guide | ⭐ **YES - Start here!** |
+| **`customer_support_agent.py`** | Production-ready support system example | ⭐ **Run this first!** |
+| **`langgraph_agent.py`** | Basic agent with calculator tool | Good for understanding basics |
+| **`README.md`** | Comprehensive tutorial (this file) | Deep dive reference |
+| **`COMPARISON.md`** | When to use LangGraph vs alternatives | Decision guide |
+
+**Recommended Learning Path:**
+1. Read [QUICKSTART.md](QUICKSTART.md) (15 min)
+2. Run `customer_support_agent.py --mode examples` (5 min)
+3. Read this README for deep understanding (45 min)
+4. Check [COMPARISON.md](COMPARISON.md) when deciding if LangGraph fits your use case
+
+## 🚀 Quick Start - Try the New Example!
+
+```bash
+# Run the customer support examples
+python tutorials/06-langgraph/customer_support_agent.py --mode examples
+
+# Or try interactive mode
+python tutorials/06-langgraph/customer_support_agent.py --mode interactive
+```
+
+**What makes this example great for learning:**
+
+1. **Concrete use case**: Customer support is familiar to everyone
+2. **Clear state**: You can see ticket properties evolve (category, priority, assignment)
+3. **Visible branching**: Watch urgent tickets take a different path
+4. **Multiple nodes**: Each stage (analyze, route, handle, escalate) is isolated and testable
+5. **Production patterns**: Built with real-world best practices
+
+## 📊 Detailed Walkthrough: Customer Support Agent
+
+### The Workflow Graph
+
+```
+┌─────────┐
+│  START  │
+└────┬────┘
+     │
+     ▼
+┌──────────┐     Step 1: Analyze incoming request
+│ analyze  │     - Classify category (technical/billing/account)
+└────┬─────┘     - Determine priority (low/medium/high/urgent)
+     │           - Generate ticket summary
+     ▼
+┌──────────┐     Step 2: Route to appropriate team
+│  route   │     - Assign to Tech/Billing/Account/General
+└────┬─────┘     - Add routing notification
+     │
+     ▼
+┌──────────┐     Step 3: Handle the request
+│  handle  │     - Search knowledge base
+└────┬─────┘     - Check account status
+     │           - Provide solution
+     ▼
+┌──────────────┐ Step 4: Check if escalation needed
+│check_escalate│ - Auto-escalate urgent tickets
+└───────┬──────┘ - Detect escalation keywords
+        │
+        ▼
+   ┌─────────┐
+   │conditional│
+   └────┬────┘
+        │
+        ├─── escalate ──▶ END
+        │
+        └─── complete ──▶ END
+```
+
+### Key Learning Points
+
+#### 1. **Rich State Management**
+
+Unlike simple chat agents, this maintains structured state:
+
+```python
+class SupportAgentState(TypedDict):
+    messages: Annotated[List[BaseMessage], add_messages]  # Conversation
+    ticket: TicketState  # Business logic state!
+```
+
+The `ticket` field tracks:
+- Category, priority, summary
+- Assignment and resolution
+- Timestamp and ticket ID
+
+**Why this matters**: Real applications need more than just chat history. LangGraph lets you maintain complex domain state alongside messages.
+
+#### 2. **Multi-Stage Orchestration**
+
+Four specialized nodes, each with a single responsibility:
+
+- **`analyze_ticket_node`**: Uses LLM to classify the request
+- **`route_ticket_node`**: Assigns to appropriate team
+- **`handle_support_node`**: Provides actual support with tools
+- **`check_escalation_node`**: Determines next steps
+
+**Why this matters**: Breaking logic into nodes makes testing, debugging, and iteration much easier. Each node can be developed and tested independently.
+
+#### 3. **Conditional Branching**
+
+The `should_escalate` function demonstrates clean branching logic:
+
+```python
+def should_escalate(state: SupportAgentState) -> Literal["escalate", "complete"]:
+    priority = state["ticket"].get("priority", "medium")
+
+    if priority == "urgent":
+        return "escalate"
+
+    # Check for escalation keywords
+    last_message = state["messages"][-1].content
+    if any(kw in last_message.lower() for kw in ["speak to manager", "lawsuit"]):
+        return "escalate"
+
+    return "complete"
+```
+
+**Why this matters**: Business logic determines the path. This is where LangGraph shines over simple prompt chains.
+
+#### 4. **Tool Integration**
+
+The `handle_support_node` uses tools contextually:
+
+- `search_knowledge_base`: Find solutions to common problems
+- `check_account_status`: Verify user account details
+- `create_escalation`: Trigger human handoff
+
+**Why this matters**: Tools are invoked at the right stage of the workflow, not randomly. The graph structure ensures proper sequencing.
+
+### Example Scenarios
+
+The tutorial includes 4 scenarios that demonstrate different paths:
+
+1. **Low Priority** → General routing → Knowledge base solution
+2. **Medium Priority** → Technical routing → Troubleshooting steps
+3. **High Priority** → Billing routing → Detailed investigation
+4. **Urgent** → Any routing → **Automatic escalation** 🚨
+
+Run `python customer_support_agent.py --mode examples` to see all four!
 
 ## 1. Orientation: How LangGraph Works
 
@@ -138,13 +293,102 @@ Under the hood, `graph.stream(..., stream_mode="updates")` yields intermediate n
 
 ## 6. Suggested Practice
 
+### For the Basic Agent (`langgraph_agent.py`)
+
 1. **Add a web-search tool** – create a stub tool that reads local markdown files or hits an API, then update `_route_after_model` to send certain intents directly to it.
 2. **Add guardrails** – insert a moderation node that inspects user input before it reaches `call_model`.
 3. **Add branches** – create a summarization node that triggers every 5 turns to condense history.
-4. **Persist state** – connect LangGraph’s `MemorySaver` checkpointing to keep chat history even after restarting the process.
+4. **Persist state** – connect LangGraph's `MemorySaver` checkpointing to keep chat history even after restarting the process.
 5. **Swap models** – try `gpt-4o-mini`, `gpt-4.1`, or an Anthropic model via `langchain_anthropic`.
 
+### For the Customer Support Agent (`customer_support_agent.py`)
+
+**Beginner Exercises:**
+
+1. **Add a new category** – Add "refund" as a ticket category with its own routing
+2. **Expand knowledge base** – Add more Q&A pairs to `search_knowledge_base`
+3. **Track metrics** – Count how many tickets of each category are processed
+4. **Add timestamps** – Show how long each stage takes
+
+**Intermediate Exercises:**
+
+1. **Multi-turn conversations** – Modify to handle follow-up questions on the same ticket
+2. **Sentiment analysis** – Add a node that detects frustrated users and adjusts priority
+3. **Feedback loop** – After resolution, ask for satisfaction rating
+4. **Parallel tools** – Allow `handle_support_node` to call multiple tools simultaneously
+
+**Advanced Exercises:**
+
+1. **Human-in-the-loop** – Add a node that waits for human approval before escalation
+2. **Memory saver** – Use LangGraph's checkpointing to persist tickets to a database
+3. **Sub-graphs** – Create separate sub-graphs for technical vs billing support
+4. **Streaming UI** – Build a web interface that shows ticket state updating in real-time
+5. **Multi-agent** – Have specialized agents for each category that the router delegates to
+
 Document your experiments inside the folder so others can follow along.
+
+## 🎯 When to Use LangGraph vs Other Approaches
+
+### Use LangGraph When You Need:
+
+✅ **Multi-step workflows** with clear stages (analyze → route → handle)
+✅ **Conditional branching** based on state (urgent tickets take different paths)
+✅ **Persistence** of complex state (ticket metadata, not just messages)
+✅ **Observability** - you want to see which node is executing
+✅ **Testability** - nodes can be unit tested independently
+✅ **Human-in-the-loop** - some stages need approval
+
+### Use Simpler Approaches When:
+
+❌ Single LLM call is sufficient (just use chat completion API)
+❌ Simple tool calling (use function calling directly)
+❌ Linear prompt chains (use LangChain LCEL)
+❌ No state beyond conversation history
+
+### Comparison: Support Agent Without LangGraph
+
+Here's what the same functionality looks like **without** LangGraph:
+
+```python
+def handle_support_messy(user_request: str):
+    # Everything in one giant function - hard to test/maintain!
+
+    # Analyze
+    analysis = llm.invoke(f"Classify this: {user_request}")
+    category = extract_category(analysis)
+    priority = extract_priority(analysis)
+
+    # Route
+    if category == "technical":
+        team = "Tech"
+    elif category == "billing":
+        team = "Billing"
+    # ... more if/else
+
+    # Handle
+    if "password" in user_request:
+        kb_result = search_kb("password")
+    # ... more if/else
+
+    # Escalate?
+    if priority == "urgent":
+        escalate(user_request)
+        return "Escalated"
+
+    # Generate response
+    response = llm.invoke(f"Respond to: {user_request} with {kb_result}")
+
+    return response
+```
+
+**Problems:**
+- All logic tangled together
+- Hard to test individual stages
+- No visibility into state transitions
+- Difficult to add human approval steps
+- Can't easily persist or replay
+
+**LangGraph solves all of these!**
 
 ## Troubleshooting
 
@@ -155,8 +399,69 @@ Document your experiments inside the folder so others can follow along.
 
 ## Next Steps
 
-- Revisit `tutorials/05-advanced/` and replace parts of the multi-agent script with LangGraph workflows.
-- Explore LangGraph’s MCP bridge to connect this agent to external tools built in Tutorial 03B.
-- Read the official [LangGraph documentation](https://langchain-ai.github.io/langgraph/) for async workflows, parallel branches, and observability.
+### Immediate Next Steps
+
+1. **Run both examples**:
+   ```bash
+   # Basic agent
+   python tutorials/06-langgraph/langgraph_agent.py --stream
+
+   # Customer support agent
+   python tutorials/06-langgraph/customer_support_agent.py --mode examples
+   ```
+
+2. **Modify the customer support agent**:
+   - Add a new ticket category (e.g., "feature_request")
+   - Implement a "satisfaction_survey" node that runs after resolution
+   - Add more realistic tools (database lookup, API calls, etc.)
+
+3. **Visualize the graph**:
+   ```python
+   from langgraph.graph import StateGraph
+   from IPython.display import Image, display
+
+   # In customer_support_agent.py
+   agent = CustomerSupportAgent()
+   display(Image(agent.graph.get_graph().draw_mermaid_png()))
+   ```
+
+### Integration with Other Tutorials
+
+- **Tutorial 03B (MCP)**: Connect the support agent to MCP tools for real data access
+- **Tutorial 05 (Advanced)**: Replace multi-agent coordination with LangGraph workflows
+- **Tutorial 04 (Async)**: Add async node execution for parallel tool calls
+
+### Deep Dive Resources
+
+- [LangGraph Documentation](https://langchain-ai.github.io/langgraph/) - Official docs
+- [LangGraph Tutorials](https://langchain-ai.github.io/langgraph/tutorials/) - More examples
+- [State Management](https://langchain-ai.github.io/langgraph/concepts/low_level/#state) - Deep dive into state
+- [Checkpointing](https://langchain-ai.github.io/langgraph/how-tos/persistence/) - Persist state to disk/DB
+
+### Production Considerations
+
+When you're ready to deploy:
+
+1. **Add checkpointing** for crash recovery
+2. **Implement proper error handling** in each node
+3. **Add logging** and observability (LangSmith integration)
+4. **Use async nodes** for I/O-bound operations
+5. **Add rate limiting** on LLM calls
+6. **Implement retries** for transient failures
+7. **Add metrics** (latency, success rate, escalation rate)
 
 When you are comfortable with these building blocks, you are ready to design bespoke LangGraph graphs for your own production agents.
+
+## 📚 Summary
+
+**What You Learned:**
+
+- ✅ LangGraph state management with `TypedDict` and reducers
+- ✅ Building multi-node workflows with clear separation of concerns
+- ✅ Conditional edges for dynamic routing
+- ✅ Maintaining complex domain state alongside messages
+- ✅ When to use LangGraph vs simpler approaches
+
+**Key Takeaway:** LangGraph excels when you need **orchestration**, **persistence**, and **branching**. For simple Q&A, stick with basic chat completions. For complex workflows, LangGraph provides the structure you need.
+
+**Next:** Build your own LangGraph application using the customer support agent as a template!
