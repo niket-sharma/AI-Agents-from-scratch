@@ -107,6 +107,14 @@ Model chat workflows as state graphs with LangGraph.
 - Stream responses and persist conversation state
 - **Time**: 60-75 minutes
 
+#### [Tutorial 07: CrewAI - Multi-Agent Teams](tutorials/07-crewai/)
+Build collaborative AI agent teams with CrewAI.
+- Create role-based agents with specific expertise
+- Define tasks and orchestrate workflows
+- Implement custom tools with @tool decorator
+- Coordinate agents in sequential and hierarchical processes
+- **Time**: 60-90 minutes
+
 ### Example Applications
 
 Real-world agent implementations you can use as templates:
@@ -126,7 +134,9 @@ AI-Agents-from-scratch/
 │   ├── 03-tools/
 │   ├── 03-mcp-servers/
 │   ├── 04-planning/
-│   └── 05-advanced/
+│   ├── 05-advanced/
+│   ├── 06-langgraph/
+│   └── 07-crewai/
 ├── src/                  # Reusable agent framework
 │   ├── agent/           # Core agent classes
 │   ├── memory/          # Memory implementations
@@ -209,8 +219,9 @@ See [docs/troubleshooting.md](docs/troubleshooting.md) for more help.
 ## Roadmap
 
 - [x] Tutorial 06: LangGraph Agents
-- [ ] Tutorial 07: Agent Evaluation and Testing
-- [ ] Tutorial 08: Production Deployment
+- [x] Tutorial 07: CrewAI Multi-Agent Teams
+- [ ] Tutorial 08: Agent Evaluation and Testing
+- [ ] Tutorial 09: Production Deployment
 - [ ] Video tutorial series
 - [ ] Interactive web-based tutorials
 - [ ] Support for open-source LLMs (Llama, Mistral)
