@@ -115,6 +115,13 @@ Build collaborative AI agent teams with CrewAI.
 - Coordinate agents in sequential and hierarchical processes
 - **Time**: 60-90 minutes
 
+#### [Tutorial 08: AutoGen Agents](tutorials/08-autogen/)
+Build an agent from scratch with AutoGen/AG2 primitives.
+- Configure `LLMConfig` manually and bind it to `AssistantAgent`
+- Pair the assistant with a `UserProxyAgent` so you can control the chat flow programmatically
+- Inspect the `RunResponse` to see both the messages and the summary that AutoGen produces
+- **Time**: 25 minutes
+
 ### Example Applications
 
 Real-world agent implementations you can use as templates:
