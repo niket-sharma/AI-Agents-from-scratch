@@ -122,6 +122,13 @@ Build an agent from scratch with AutoGen/AG2 primitives.
 - Inspect the `RunResponse` to see both the messages and the summary that AutoGen produces
 - **Time**: 25 minutes
 
+#### [Tutorial 09: LangChain Agents](tutorials/09-langchain/)
+Use LangChain Core to build a ReAct agent without the custom framework.
+- Compose tools, prompts, and `ChatOpenAI` manually
+- Create a safe calculator tool and plug it into `create_react_agent`
+- Run a real task with `AgentExecutor` and inspect tool traces
+- **Time**: 30 minutes
+
 ### Example Applications
 
 Real-world agent implementations you can use as templates:
