@@ -15,6 +15,7 @@ Optional: set `LANGCHAIN_TRACING_V2=true` and `LANGCHAIN_API_KEY` if you want to
 | File | Description |
 |------|-------------|
 | `simple_langchain_agent.py` | Fully working script that defines a calculator tool, constructs a ReAct agent, and runs an example task |
+| `multi_langchain_agents.py` | Bonus example showing how to coordinate Research/Coder/Reviewer agents sequentially without LangGraph |
 
 ## What You Will Learn
 
@@ -52,6 +53,7 @@ Optional: set `LANGCHAIN_TRACING_V2=true` and `LANGCHAIN_API_KEY` if you want to
 3. Chain two agent runs together: first gather research, then write an email.
 4. Add guardrails by checking `result["intermediate_steps"]` and ensuring no tool runs longer than expected.
 5. Compare this LangChain agent with the AutoGen version in `tutorials/08-autogen`—what abstractions feel easier/harder?
+6. Run `multi_langchain_agents.py` and extend the pipeline with a fourth agent (e.g., an executive summary writer) or insert a retry loop if the reviewer says FAIL.
 
 ## Troubleshooting
 

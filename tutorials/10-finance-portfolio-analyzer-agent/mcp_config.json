@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "stock-data": {
+      "command": "python",
+      "args": ["mcp-servers/stock-data/server.py"],
+      "env": {
+        "ALPHA_VANTAGE_KEY": "demo"
+      }
+    }
+  }
+}

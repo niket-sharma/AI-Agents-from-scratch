@@ -127,6 +127,7 @@ Use LangChain Core to build a ReAct agent without the custom framework.
 - Compose tools, prompts, and `ChatOpenAI` manually
 - Create a safe calculator tool and plug it into `create_react_agent`
 - Run a real task with `AgentExecutor` and inspect tool traces
+- Bonus: Multi-agent script that chains Research, Coder, and Reviewer executors
 - **Time**: 30 minutes
 
 ### Example Applications
