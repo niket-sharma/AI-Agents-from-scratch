@@ -1,6 +1,18 @@
+# Core dependencies
 anthropic>=0.39.0
 python-dotenv>=1.0.0
 pandas>=2.0.0
 openpyxl>=3.1.0
 requests>=2.31.0
 pytest>=7.4.0
+
+# Timezone handling for market hours
+pytz>=2024.1
+
+# MCP Server (optional - for real-time data tools)
+mcp>=1.0.0
+
+# Development dependencies (optional)
+# black>=24.0.0
+# mypy>=1.8.0
+# flake8>=7.0.0

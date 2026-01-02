@@ -2,21 +2,42 @@
 
 A comprehensive AI agent that demonstrates Claude's advanced capabilities including Skills, Computer Use, MCP integration, and Memory. This tutorial teaches you how to build a personal finance portfolio analyzer from scratch.
 
+## 🚀 NEW: Enhanced Trading Features
+
+This agent now includes professional-grade trading capabilities:
+
+- **📈 Technical Analysis**: 15+ indicators (RSI, MACD, Bollinger, ADX, etc.)
+- **🎯 Trading Strategies**: 5 built-in strategies with multi-strategy consensus
+- **⚠️ Risk Management**: Position sizing, VaR, Sharpe/Sortino ratios
+- **🔬 Backtesting**: Full strategy testing with walk-forward analysis
+- **🔔 Alerts**: Price, technical, and portfolio alerts
+- **📊 Market Data**: Real-time quotes, sector performance, screening
+
+**See [FEATURES.md](FEATURES.md) for complete documentation of all trading features.**
+
 ## Features
 
 - **Portfolio Analysis**: Analyze investment holdings with key financial metrics (returns, Sharpe ratio, risk level)
 - **Excel Reports**: Generate professional formatted reports with charts and conditional formatting
 - **Real-time Data**: Fetch current stock prices via MCP server integration
 - **Persistent Memory**: Remember user preferences across sessions
-- **Interactive CLI**: User-friendly command-line interface
+- **Interactive CLI**: User-friendly command-line interface with quick commands
 
 ## Project Structure
 
 ```
 finance-agent/
 ├── src/
-│   ├── agent.py                    # Main agent implementation (Layers 1-3)
-│   └── agent_memory.py             # Memory capabilities (Layer 5)
+│   ├── agent.py                    # Basic agent implementation
+│   ├── finance_agent.py            # Enhanced agent with trading features
+│   ├── agent_memory.py             # Memory capabilities
+│   ├── portfolio.py                # Portfolio management & analysis
+│   ├── technical_indicators.py     # 15+ technical indicators
+│   ├── risk_management.py          # VaR, position sizing, risk metrics
+│   ├── trading_strategy.py         # Strategy engine & signals
+│   ├── backtesting.py              # Backtesting framework
+│   ├── alerts.py                   # Alerts & notifications
+│   └── market_data.py              # Market data service
 ├── .claude/
 │   └── skills/
 │       ├── portfolio-analysis/
@@ -27,7 +48,7 @@ finance-agent/
 │           └── SKILL.md           # Excel report generation
 ├── mcp-servers/
 │   └── stock-data/
-│       ├── server.py              # MCP server for stock prices
+│       ├── server.py              # Enhanced MCP server with 10+ tools
 │       └── requirements.txt
 ├── data/
 │   └── sample_portfolio.csv       # Example portfolio data
@@ -37,7 +58,8 @@ finance-agent/
 │   └── test_mcp.py
 ├── requirements.txt
 ├── mcp_config.json               # MCP server configuration
-├── main.py                       # CLI interface
+├── main.py                       # Enhanced CLI interface
+├── FEATURES.md                   # Detailed trading features guide
 └── README.md
 ```
 
