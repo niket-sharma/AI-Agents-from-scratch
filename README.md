@@ -130,6 +130,15 @@ Use LangChain Core to build a ReAct agent without the custom framework.
 - Bonus: Multi-agent script that chains Research, Coder, and Reviewer executors
 - **Time**: 30 minutes
 
+#### [Tutorial 12: Claude Skills - Extended Thinking & Computer Use](tutorials/12-claude-skills/)
+Master Claude's advanced capabilities with Extended Thinking and Computer Use.
+- Implement Extended Thinking for complex problem-solving
+- Understand when to use Skills vs traditional tools
+- Build agents with Computer Use capabilities
+- Compare performance, cost, and use cases
+- Apply best practices for production deployments
+- **Time**: 90-120 minutes
+
 ### Example Applications
 
 Real-world agent implementations you can use as templates:
@@ -151,7 +160,10 @@ AI-Agents-from-scratch/
 │   ├── 04-planning/
 │   ├── 05-advanced/
 │   ├── 06-langgraph/
-│   └── 07-crewai/
+│   ├── 07-crewai/
+│   ├── 08-autogen/
+│   ├── 09-langchain/
+│   └── 12-claude-skills/
 ├── src/                  # Reusable agent framework
 │   ├── agent/           # Core agent classes
 │   ├── memory/          # Memory implementations
@@ -232,8 +244,13 @@ A: We build from scratch to teach fundamentals. You'll understand what framework
 See [docs/troubleshooting.md](docs/troubleshooting.md) for more help.
 
 ## Roadmap
-
-- [x] Tutorial 06: LangGraph Agents
+x] Tutorial 08: AutoGen Agents
+- [x] Tutorial 09: LangChain Agents
+- [x] Tutorial 12: Claude Skills (Extended Thinking & Computer Use)
+- [ ] Tutorial 10: Finance Portfolio Analyzer
+- [ ] Tutorial 11: Subagents
+- [ ] Agent Evaluation and Testing Guide
+- [ ] Production Deployment Guide
 - [x] Tutorial 07: CrewAI Multi-Agent Teams
 - [ ] Tutorial 08: Agent Evaluation and Testing
 - [ ] Tutorial 09: Production Deployment

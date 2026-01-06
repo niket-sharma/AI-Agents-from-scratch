@@ -1,0 +1,16 @@
+# Tutorial 12: Claude Skills Requirements
+
+# Core Dependencies
+anthropic>=0.40.0  # Official Anthropic SDK with Skills support
+python-dotenv>=1.0.0  # Environment variable management
+
+# For Computer Use (advanced features)
+pillow>=10.0.0  # Image processing for screenshots
+pyautogui>=0.9.54  # GUI automation (optional, for Computer Use demos)
+
+# Optional: For sandboxed Computer Use
+docker>=6.0.0  # Docker SDK for Python (if using containerization)
+
+# Development Tools (optional)
+ipython>=8.0.0  # Interactive Python shell
+jupyter>=1.0.0  # Jupyter notebooks for experimentation
