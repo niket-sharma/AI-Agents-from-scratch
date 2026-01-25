@@ -31,6 +31,7 @@ class MCPClient:
         self.session: Optional[ClientSession] = None
         self.tools = []
         self.resources = []
+        self._context_stack = []
 
     async def connect_to_server(self, server_script_path: str):
         """
@@ -46,19 +47,23 @@ class MCPClient:
             env=None  # Environment variables (optional)
         )
 
-        print(f"🔌 Connecting to MCP server: {server_script_path}")
+        print(f"Connecting to MCP server: {server_script_path}")
 
-        # Create stdio transport and connect
-        stdio_transport = await stdio_client(server_params)
-        self.read_stream, self.write_stream = stdio_transport
+        # Use context manager for stdio_client
+        stdio_context = stdio_client(server_params)
+        transport = await stdio_context.__aenter__()
+        self._context_stack.append(stdio_context)
 
-        # Create client session
+        self.read_stream, self.write_stream = transport
+
+        # Create and initialize session
         self.session = ClientSession(self.read_stream, self.write_stream)
+        await self.session.__aenter__()
+        self._context_stack.append(self.session)
 
-        # Initialize the session
         await self.session.initialize()
 
-        print("✅ Connected to MCP server!")
+        print("Connected to MCP server!")
 
         # List available tools
         await self.list_available_tools()
@@ -183,10 +188,15 @@ class MCPClient:
 
     async def disconnect(self):
         """Disconnect from the server."""
-        if self.session:
-            print("\n👋 Disconnecting from server...")
-            await self.session.close()
-            self.session = None
+        print("\nDisconnecting from server...")
+        # Close contexts in reverse order
+        while self._context_stack:
+            ctx = self._context_stack.pop()
+            try:
+                await ctx.__aexit__(None, None, None)
+            except Exception:
+                pass
+        self.session = None
 
 
 async def demo_calculator_server():

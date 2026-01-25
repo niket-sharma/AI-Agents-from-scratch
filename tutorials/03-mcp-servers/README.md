@@ -52,7 +52,25 @@ Before MCP, every AI tool integration was custom. Now:
 
 ## Tutorial Structure
 
-This tutorial contains 4 complete examples:
+This tutorial contains examples at different complexity levels:
+
+### NEW: **Practical Examples** - End-to-End LLM Integration
+- **Folder**: `practical/`
+- **What it teaches**: How to build REAL applications with MCP + LLM
+- **Files**:
+  - `notes_mcp_server.py` - SQLite-backed notes database
+  - `llm_mcp_client.py` - Bridge between OpenAI/Claude and MCP
+  - `ai_notes_assistant.py` - Complete runnable AI application
+- **Complexity**: ⭐⭐⭐ Most Practical
+
+**Quick Run:**
+```bash
+pip install mcp openai python-dotenv
+export OPENAI_API_KEY="your-key"
+python tutorials/03-mcp-servers/practical/ai_notes_assistant.py
+```
+
+---
 
 ### 1. **Basic Server** - Simple Calculator
 - **File**: `basic/simple_mcp_server.py`
