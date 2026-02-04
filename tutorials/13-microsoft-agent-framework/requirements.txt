@@ -1,0 +1,11 @@
+# Tutorial 13: Microsoft Agent Framework
+# https://learn.microsoft.com/en-us/agent-framework/overview/agent-framework-overview
+
+# Core framework SDK (public preview)
+agent-framework --pre
+
+# Environment variable management
+python-dotenv>=1.0.0
+
+# Structured output validation (used in 04_conditional_routing.py)
+pydantic>=2.0.0
