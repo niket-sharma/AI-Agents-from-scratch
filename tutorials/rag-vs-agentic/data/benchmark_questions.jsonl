@@ -1,0 +1,25 @@
+{"query_id":"q01","query_text":"Can I expense a $120 dinner in NYC during a client trip?","expected_keywords_all":["manager pre-approval"],"expected_keywords_any":["$112","112","daily cap","exceeds"],"forbidden_keywords":["without approval"]}
+{"query_id":"q02","query_text":"Do I need receipts for taxi under $30?","expected_keywords_any":["receipts are not required","no receipt"],"expected_keywords_all":["date","route","business purpose"]}
+{"query_id":"q03","query_text":"What is the max daily meal spend in SF if the base is $80 and SF multiplier is 1.25?","expected_numeric":100.0,"tolerance":0.01}
+{"query_id":"q04","query_text":"What is the NYC daily meal cap from policy numbers?","expected_numeric":112.0,"tolerance":0.01}
+{"query_id":"q05","query_text":"Can I reimburse alcohol on a non-client dinner?","expected_keywords_any":["not reimbursable","only for client meals","cannot"],"forbidden_keywords":["yes"]}
+{"query_id":"q06","query_text":"What nightly lodging cap applies in Seattle?","expected_numeric":220.0,"tolerance":0.01}
+{"query_id":"q07","query_text":"If I spend $290 on a NYC hotel night, is it within cap?","expected_keywords_any":["within cap","yes"],"expected_keywords_all":["$300","300"]}
+{"query_id":"q08","query_text":"If I am remote and buy a $450 desk after using the $300 setup stipend, what approvals are needed?","expected_keywords_all":["manager","finance"]}
+{"query_id":"q09","query_text":"How much monthly internet can remote staff expense?","expected_numeric":50.0,"tolerance":0.01}
+{"query_id":"q10","query_text":"Are commutes to my assigned office reimbursable?","expected_keywords_any":["not reimbursable","no"]}
+{"query_id":"q11","query_text":"Can I claim per diem without receipts?","expected_keywords_any":["does not require receipts","without receipts","yes"],"forbidden_keywords":["requires receipts"]}
+{"query_id":"q12","query_text":"What total meal cap applies in Seattle based on base $80 and multiplier?","expected_numeric":92.0,"tolerance":0.01}
+{"query_id":"q13","query_text":"For a $1,200 laptop purchase, which approvals are required?","expected_keywords_all":["manager","finance","director"]}
+{"query_id":"q14","query_text":"Can software under $200 skip security review?","expected_keywords_any":["requires security review","cannot skip","regardless of cost"],"forbidden_keywords":["can skip"]}
+{"query_id":"q15","query_text":"How many times can a missing receipt affidavit be used per quarter?","expected_numeric":2.0,"tolerance":0.0}
+{"query_id":"q16","query_text":"If a trip has lunch in Seattle and dinner in SF, which city multiplier applies for that day?","expected_keywords_any":["san francisco","sf"],"expected_keywords_all":["dinner"]}
+{"query_id":"q17","query_text":"What approvals are required for a $700 purchase?","expected_keywords_all":["manager","finance"]}
+{"query_id":"q18","query_text":"Can a remote employee expense travel to a different office for a required meeting?","expected_keywords_any":["may be reimbursable","reimbursable"],"expected_keywords_all":["pre-approved"],"forbidden_keywords":["always"]}
+{"query_id":"q19","query_text":"If base meal is $80, what is daily cap in an other city with multiplier 1.00?","expected_numeric":80.0,"tolerance":0.01}
+{"query_id":"q20","query_text":"Can team offsites use budgets instead of single-meal guidance?","expected_keywords_any":["yes","can use approved event budgets"],"expected_keywords_all":["approved departmental budget"]}
+{"query_id":"q21","query_text":"What is the incidental per diem per day?","expected_numeric":20.0,"tolerance":0.01}
+{"query_id":"q22","query_text":"Do I need itemized receipts for a $29 rideshare?","expected_keywords_any":["not required","no receipt"],"expected_keywords_all":["date","route","business purpose"]}
+{"query_id":"q23","query_text":"Can medical dietary accommodations exceed meal caps, and by how much percent?","expected_numeric":20.0,"tolerance":0.01}
+{"query_id":"q24","query_text":"What is the SF lodging cap and is $280 reimbursable without exception?","expected_keywords_any":["$260","260"],"expected_keywords_all":["without exception"],"forbidden_keywords":["within cap"]}
+{"query_id":"q25","query_text":"For a new remote employee, what is the one-time setup stipend and time window?","expected_keywords_any":["$300","300"],"expected_keywords_all":["first 60 days","one-time"]}
