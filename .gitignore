@@ -127,3 +127,10 @@ tutorials/03-mcp-servers/.gitignore_summary.txt
 claude_desktop_config.json
 **/claude_desktop_config.json
 !**/claude_desktop_config.example.json
+
+# Generated outputs and stray artifacts
+product_launch_strategy.txt
+.gitignore_summary.txt
+*.gitignore_summary.txt
+notes.db
+agent-features-spec.md

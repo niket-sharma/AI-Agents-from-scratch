@@ -12,12 +12,12 @@ long_description = readme_file.read_text(encoding="utf-8") if readme_file.exists
 setup(
     name="ai-agents-tutorial",
     version="0.1.0",
-    author="Your Name",
-    author_email="your.email@example.com",
+    author="Niket Sharma",
+    author_email="sharma.niket@gmail.com",
     description="A comprehensive tutorial for building AI agents from scratch",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/yourusername/AI-Agents-from-scratch",
+    url="https://github.com/niket-sharma/AI-Agents-from-scratch",
     packages=find_packages(where="src"),
     package_dir={"": "src"},
     classifiers=[

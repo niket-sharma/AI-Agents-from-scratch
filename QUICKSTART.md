@@ -12,7 +12,7 @@ Ensure you have:
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/AI-Agents-from-scratch.git
+git clone https://github.com/niket-sharma/AI-Agents-from-scratch.git
 cd AI-Agents-from-scratch
 
 # Create virtual environment
@@ -154,7 +154,7 @@ print(response)
 
 ## Getting Help
 
-- **Issues**: Report bugs or ask questions via [GitHub Issues](https://github.com/yourusername/AI-Agents-from-scratch/issues)
+- **Issues**: Report bugs or ask questions via [GitHub Issues](https://github.com/niket-sharma/AI-Agents-from-scratch/issues)
 - **Documentation**: Check the [docs](docs/) folder
 - **Examples**: Look at working examples in [examples](examples/)
 
@@ -186,7 +186,7 @@ Agent:
 - **API Documentation**:
   - [OpenAI](https://platform.openai.com/docs)
   - [Anthropic](https://docs.anthropic.com)
-- **Community**: [GitHub Discussions](https://github.com/yourusername/AI-Agents-from-scratch/discussions)
+- **Community**: [GitHub Discussions](https://github.com/niket-sharma/AI-Agents-from-scratch/discussions)
 
 ---
 

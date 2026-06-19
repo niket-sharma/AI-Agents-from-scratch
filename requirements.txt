@@ -17,16 +17,6 @@ pydantic
 # HTTP requests
 requests
 
-# Vector databases (for advanced tutorials)
-chromadb
-
-# Data processing
-numpy
-
-# Interactive notebooks
-jupyter
-ipykernel
-
 # Testing
 pytest
 pytest-asyncio
@@ -35,36 +25,15 @@ pytest-cov
 # Code quality
 black
 flake8
-mypy
 
 # Retry logic
 tenacity
-
-# JSON schema validation
-jsonschema
-
-# Date/time utilities
-python-dateutil
 
 # Logging
 colorlog
 
 # CLI utilities
 rich
-click
 
-# Optional: Web UI frameworks
-gradio
-streamlit
-
-# Optional: Additional LLM frameworks
-langchain
-langchain-community
-langchain-openai
-langgraph
-# AutoGen / AG2 agent framework (see tutorials/08-autogen)
-autogen>=0.10.1
-
-# CrewAI framework
-crewai>=0.11.0
-crewai-tools>=0.2.0
+# Note: Framework-specific and heavy deps (langchain, langgraph, crewai, autogen,
+# gradio, streamlit, chromadb, jupyter) live in each tutorial's requirements.txt.

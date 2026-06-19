@@ -138,7 +138,7 @@ Focus: Building real applications
 ### Setup
 ```bash
 # Clone repository
-git clone https://github.com/yourusername/AI-Agents-from-scratch.git
+git clone https://github.com/niket-sharma/AI-Agents-from-scratch.git
 cd AI-Agents-from-scratch
 
 # Create virtual environment

@@ -24,7 +24,7 @@ A step-by-step guide to building intelligent AI agents from the ground up. Learn
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/AI-Agents-from-scratch.git
+git clone https://github.com/niket-sharma/AI-Agents-from-scratch.git
 cd AI-Agents-from-scratch
 
 # Create a virtual environment
@@ -130,6 +130,18 @@ Use LangChain Core to build a ReAct agent without the custom framework.
 - Bonus: Multi-agent script that chains Research, Coder, and Reviewer executors
 - **Time**: 30 minutes
 
+#### [Tutorial 10: Finance Portfolio Analyzer](tutorials/10-finance-portfolio-analyzer-agent/)
+Build a multi-tool finance agent that analyzes portfolios using MCP servers.
+- Integrate financial data tools and MCP servers
+- Implement portfolio analysis workflows
+- **Time**: 60 minutes
+
+#### [Tutorial 11: Subagents](tutorials/11-subagents/)
+Learn how to build hierarchical multi-agent systems with subagents.
+- Agent-as-tool pattern
+- Parallel and recursive subagent patterns
+- **Time**: 45-60 minutes
+
 #### [Tutorial 12: Claude Skills - Extended Thinking & Computer Use](tutorials/12-claude-skills/)
 Master Claude's advanced capabilities with Extended Thinking and Computer Use.
 - Implement Extended Thinking for complex problem-solving
@@ -138,6 +150,18 @@ Master Claude's advanced capabilities with Extended Thinking and Computer Use.
 - Compare performance, cost, and use cases
 - Apply best practices for production deployments
 - **Time**: 90-120 minutes
+
+#### [Tutorial 13: Microsoft Agent Framework](tutorials/13-microsoft-agent-framework/)
+Build agents with Microsoft's AutoGen/Azure AI Agent framework.
+- Basic agents, tool binding, and sequential workflows
+- Conditional routing and parallel execution patterns
+- **Time**: 45-60 minutes
+
+#### [RAG vs Agentic RAG](tutorials/rag-vs-agentic/)
+Compare basic retrieval-augmented generation with full agentic RAG.
+- Benchmark retrieval quality across approaches
+- Understand when to upgrade from RAG to agentic RAG
+- **Time**: 60-90 minutes
 
 ### Example Applications
 
@@ -163,7 +187,11 @@ AI-Agents-from-scratch/
 │   ├── 07-crewai/
 │   ├── 08-autogen/
 │   ├── 09-langchain/
-│   └── 12-claude-skills/
+│   ├── 10-finance-portfolio-analyzer-agent/
+│   ├── 11-subagents/
+│   ├── 12-claude-skills/
+│   ├── 13-microsoft-agent-framework/
+│   └── rag-vs-agentic/
 ├── src/                  # Reusable agent framework
 │   ├── agent/           # Core agent classes
 │   ├── memory/          # Memory implementations
@@ -180,7 +208,6 @@ AI-Agents-from-scratch/
 
 - **Progressive Learning**: Start simple, gradually add complexity
 - **Hands-on Approach**: Every concept includes working code
-- **Interactive Notebooks**: Jupyter notebooks for experimentation
 - **Production-Ready**: Learn patterns used in real applications
 - **Multiple LLM Providers**: Works with OpenAI, Anthropic, and more
 - **Comprehensive Tests**: Learn testing strategies for AI systems
@@ -244,18 +271,24 @@ A: We build from scratch to teach fundamentals. You'll understand what framework
 See [docs/troubleshooting.md](docs/troubleshooting.md) for more help.
 
 ## Roadmap
-x] Tutorial 08: AutoGen Agents
-- [x] Tutorial 09: LangChain Agents
-- [x] Tutorial 12: Claude Skills (Extended Thinking & Computer Use)
-- [ ] Tutorial 10: Finance Portfolio Analyzer
-- [ ] Tutorial 11: Subagents
-- [ ] Agent Evaluation and Testing Guide
-- [ ] Production Deployment Guide
+
+### Completed
 - [x] Tutorial 07: CrewAI Multi-Agent Teams
-- [ ] Tutorial 08: Agent Evaluation and Testing
-- [ ] Tutorial 09: Production Deployment
+- [x] Tutorial 08: AutoGen Agents
+- [x] Tutorial 09: LangChain Agents
+- [x] Tutorial 10: Finance Portfolio Analyzer
+- [x] Tutorial 11: Subagents
+- [x] Tutorial 12: Claude Skills (Extended Thinking & Computer Use)
+- [x] Tutorial 13: Microsoft Agent Framework
+- [x] RAG vs Agentic RAG benchmark
+
+### Upcoming
+- [ ] Tutorial 14: Memory Systems (episodic, semantic, summary)
+- [ ] Tutorial 15: Evaluation & Observability
+- [ ] Tutorial 16: Guardrails & Human-in-the-Loop
+- [ ] Tutorial 17: Context Engineering
+- [ ] Tutorial 21: Local Models with Ollama
 - [ ] Video tutorial series
-- [ ] Interactive web-based tutorials
 - [ ] Support for open-source LLMs (Llama, Mistral)
 
 ## License
@@ -268,9 +301,9 @@ This project is inspired by the growing AI agent ecosystem and aims to make agen
 
 ## Support
 
-- **Issues**: Report bugs or request features via [GitHub Issues](https://github.com/yourusername/AI-Agents-from-scratch/issues)
-- **Discussions**: Join conversations in [GitHub Discussions](https://github.com/yourusername/AI-Agents-from-scratch/discussions)
-- **Twitter**: Follow updates [@yourusername](https://twitter.com/yourusername)
+- **Issues**: Report bugs or request features via [GitHub Issues](https://github.com/niket-sharma/AI-Agents-from-scratch/issues)
+- **Discussions**: Join conversations in [GitHub Discussions](https://github.com/niket-sharma/AI-Agents-from-scratch/discussions)
+- **Twitter**: Follow updates [@niket-sharma](https://twitter.com/niket-sharma)
 
 ---
 
