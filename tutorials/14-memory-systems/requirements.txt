@@ -1,0 +1,7 @@
+chromadb>=1.0.0
+mem0ai>=0.1.0
+tiktoken>=0.5.0
+openai>=1.0.0
+python-dotenv>=1.0.0
+# Optional: letta (heavier install, needed only for 04_letta_runtime.py)
+# letta>=0.5.0
